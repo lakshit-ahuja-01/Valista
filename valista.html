@@ -3,52 +3,173 @@
 <head>
     <title>Valista | Smart Ownership</title>
     <style>
-        /* BASE STYLES */
-        body { background-color: #050505; color: #ffffff; font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        /* THEME VARIABLES */
+        :root {
+            --bg: #050505;
+            --card-bg: #111;
+            --text: #ffffff;
+            --border: #333;
+            --nav-bg: #111111;
+            --hero-grad: radial-gradient(circle at center, #1a1a1a 0%, #050505 100%);
+        }
 
-        /* NAVIGATION  */
-        nav { display: none; justify-content: space-between; align-items: center; padding: 15px 50px; background-color: #111111; border-bottom: 1px solid #333; }
-        .nav-left, .nav-links { display: flex; align-items: center; gap: 25px; }
-        .logo { font-size: 22px; font-weight: 900; cursor: pointer; letter-spacing: 2px; }
+        .light-mode {
+            --bg: #f5f5f7;
+            --card-bg: #ffffff;
+            --text: #1d1d1f;
+            --border: #d2d2d7;
+            --nav-bg: #ffffff;
+            --hero-grad: radial-gradient(circle at center, #ffffff 0%, #f5f5f7 100%);
+        }
 
-        /* BUTTONS  */
-        button { cursor: pointer; border-radius: 20px; border: none; font-weight: bold; padding: 10px 20px; transition: 0.3s; }
-        .primary-btn { background-color: #ffffff; color: #000000; }
-        .buy-now-btn { background-color: #e5e7eb; color: #000000; width: 100%; padding: 15px; margin-top: 10px; }
+        body { background-color: var(--bg); 
+            color: var(--text); 
+            font-family: Arial, sans-serif; 
+            margin: 0; padding: 0;
+            transition: 0.3s; }
+
+        /* NAVIGATION*/
+        nav { display: none;
+            justify-content: space-between;
+            align-items: center; padding: 15px 50px;
+            background-color: var(--nav-bg); 
+            border-bottom: 1px solid var(--border); }
+        .nav-left, .nav-links, .nav-right { display: flex; align-items: center; gap: 20px; }
+        .logo { font-size: 22px; 
+            font-weight: 900; 
+            cursor: pointer;
+            letter-spacing: 2px; }
+
+        /* BUTTONS & SELECTS */
+        button, select { cursor: pointer;
+            border-radius: 20px; border: 1px solid var(--border); 
+            font-weight: bold; padding: 10px 20px; 
+            transition: 0.3s;
+            background: none;
+            color: var(--text); }
+        .primary-btn { 
+            background-color: var(--text); 
+            color: var(--bg); 
+            border: none; }
+        .buy-now-btn { 
+            background-color: #e5e7eb;
+            color: #000000; width: 100%;
+            padding: 15px; 
+            margin-top: 10px; 
+            border: none; }
 
         /* LOGIN SCREEN */
-        #login-screen { display: flex; justify-content: center; align-items: center; height: 100vh; }
-        .login-card { background-color: #111; padding: 40px; border-radius: 20px; border: 1px solid #333; text-align: center; width: 350px; }
+        #login-screen { 
+            display: flex; 
+            justify-content: center;
+            align-items: center; 
+            height: 100vh; }
+        .login-card {
+            background-color: var(--card-bg); 
+            padding: 40px; 
+            border-radius: 20px; 
+            border: 1px solid var(--border); 
+            text-align: center; 
+            width: 350px; }
+        .login-card input { 
+            width: 90%; 
+            padding: 12px; 
+            margin-bottom: 15px; 
+            background: var(--bg); 
+            border: 1px solid var(--border); 
+            color: var(--text); 
+            border-radius: 10px; }
 
-        input, textarea, select { width: 90%; padding: 10px; margin-bottom: 10px; background-color: #000; border: 1px solid #333; color: #fff; border-radius: 5px; }
-
-        /* PAGE VISIBILITY  */
-        .page { display: none; padding: 50px; }
+        /* PAGE VISIBILITY */
+        .page { 
+            display: none; 
+            padding: 50px; }
 
         /* HOME PAGE DESIGN */
-        .hero { text-align: center; padding: 100px 20px; background: radial-gradient(circle at center, #1a1a1a 0%, #050505 100%); margin-bottom: 40px; }
-        .hero h1 { font-size: 55px; margin: 0; }
-        .hero p { color: #888; font-size: 18px; margin-top: 10px; margin-bottom: 30px; }
+        .hero { 
+            text-align: center; 
+            padding: 100px 20px; 
+            background: var(--hero-grad); 
+            margin-bottom: 40px; }
+        .hero h1 { 
+            font-size: 55px; 
+            margin: 0; }
+        .hero p { 
+            color: #888; 
+            font-size: 18px; 
+            margin-top: 10px;
+            margin-bottom: 30px; }
         
-        .feature-grid { display: flex; gap: 20px; max-width: 1000px; margin: auto; padding-bottom: 50px; }
-        .feature-box { background: #111; border: 1px solid #222; padding: 30px; border-radius: 20px; flex: 1; text-align: center; transition: 0.3s; }
-        .feature-box h3 { margin-top: 0; color: #ffffff; }
-        .feature-box p { color: #777; font-size: 14px; line-height: 1.5; margin-bottom: 20px; }
+        .feature-grid { 
+            display: flex; 
+            gap: 20px; 
+            max-width: 1000px; 
+            margin: auto; }
+        .feature-box { 
+            background: var(--card-bg); 
+            border: 1px solid var(--border); 
+            padding: 30px; 
+            border-radius: 20px; 
+            flex: 1; 
+            text-align: center; }
 
-        /* LAYOUT & CARDS */
-        .container { display: flex; flex-wrap: wrap; gap: 20px; max-width: 1200px; margin: auto; }
-        .card { background-color: #111; border: 1px solid #222; border-radius: 15px; padding: 25px; flex: 1; min-width: 250px; }
+        /* PRODUCT CARDS */
+        .container { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 20px; 
+            max-width: 1200px; 
+            margin: auto; }
+        .card { 
+            background-color: var(--card-bg); 
+            border: 1px solid var(--border); 
+            border-radius: 15px; 
+            padding: 25px; 
+            flex: 1; 
+            min-width: 250px; }
+        .shop-img { 
+            width: 100%; 
+            height: 180px; 
+            border-radius: 10px; 
+            object-fit: contain; 
+            background: #000; }
 
-        /* IMAGE STYLES */
-        .shop-img { width: 100%; height: 180px; border-radius: 10px; object-fit: contain; background: #000; }
+        /* HEATMAP (From your logic) */
+        .heatmap-container { 
+            display: flex; 
+            gap: 5px; 
+            margin-top: 10px; }
+        .month-box { 
+            height: 35px; 
+            flex: 1; 
+            border-radius: 4px; 
+            border: 1px solid var(--border); 
+        }
+        .good { background-color: #96ca43; } 
+        .regret { background-color: #ea4747; } 
 
-        /* HEATMAP */
-        .heatmap-container { display: flex; gap: 5px; }
-        .month-box { height: 35px; flex: 1; border-radius: 4px; border: 1px solid #333; }
-        .good { background-color: #96ca43; }
-        .regret { background-color: #ea4747; }
+        #sim-display { 
+            height: 400px; 
+            background-color: #000; 
+            border-radius: 20px; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; }
 
-        #sim-display { height: 400px; background-color: #000; border-radius: 20px; display: flex; justify-content: center; align-items: center; }
+        /* FOOTER */
+        #footer { 
+            display: none; 
+            text-align: center; 
+            padding: 40px 20px; 
+            font-size: 13px; 
+            color: #555; 
+            border-top: 1px solid var(--border); 
+            background-color: var(--bg); 
+            line-height: 1.6; }
+        #footer a { 
+            color: var(--text); 
+            text-decoration: none; 
+            border-bottom: 1px solid #444; }
     </style>
 </head>
 <body>
@@ -57,7 +178,7 @@
         <div class="login-card">
             <h1 class="logo">VALISTA</h1>
             <input type="text" id="user-input" placeholder="Enter Your Name">
-            <button class="primary-btn" style="width: 100%; margin-top: 10px;" onclick="doLogin()">Sign In</button>
+            <button class="primary-btn" style="width: 100%;" onclick="doLogin()">Sign In</button>
         </div>
     </div>
 
@@ -65,16 +186,17 @@
         <div class="nav-left">
             <div class="logo" onclick="navigateTo('home')">VALISTA</div>
             <div class="nav-links">
-                <button onclick="navigateTo('home')" style="background:none; border:none; color:#888;">Home</button>
-                <button onclick="navigateTo('category')" style="background:none; border:none; color:#888;">Shop</button>
-                <select style="width: auto; background: black; color: white; border-radius: 5px;">
-                    <option>English (US)</option>
-                    <option>Hindi</option>
-                </select>
+                <button onclick="navigateTo('home')" style="border:none;">Home</button>
+                <button onclick="navigateTo('category')" style="border:none;">Shop</button>
             </div>
         </div>
-        <div>
-            <span id="nav-user-name" style="margin-right: 15px; font-weight: bold;"></span>
+        <div class="nav-right">
+            <select style="padding: 5px 10px; font-size: 12px;">
+                <option>English (US)</option>
+                <option>Hindi</option>
+            </select>
+            <button onclick="toggleMode()" style="padding: 5px 10px; font-size: 12px;">🌓 Theme</button>
+            <span id="nav-user-name" style="font-weight: bold;"></span>
             <button class="primary-btn" onclick="navigateTo('cart')">Cart (<span id="cart-count">0</span>)</button>
         </div>
     </nav>
@@ -84,17 +206,15 @@
             <h1>Welcome back, <span id="display-name" style="color: #c2a4a4;"></span>.</h1>
             <p>Smart ownership starts with asset intelligence.</p>
         </div>
-
         <div class="feature-grid">
             <div class="feature-box">
                 <h3>Marketplace</h3>
-                <p>Explore high-retention tech assets curated for long-term value.</p>
+                <p>Explore high-retention tech assets.</p>
                 <button class="primary-btn" style="width: 100%;" onclick="navigateTo('category')">Enter Market</button>
             </div>
-            
             <div class="feature-box">
                 <h3>My Portfolio</h3>
-                <p>View your owned items and track their current ownership status.</p>
+                <p>View your owned items and status.</p>
                 <button class="primary-btn" style="width: 100%;" onclick="navigateTo('cart')">View Portfolio</button>
             </div>
         </div>
@@ -119,35 +239,27 @@
     <div id="product" class="page">
         <div class="container">
             <div class="card" style="flex: 2;">
-                <div id="sim-display">
-                    <img id="prod-img" src="" width="50%">
-                </div>
+                <div id="sim-display"><img id="prod-img" src="" width="50%"></div>
                 <div style="margin-top: 15px; display: flex; gap: 10px; justify-content: center;">
                     <button class="primary-btn" onclick="changePhoto('measure')">Measure View</button>
                     <button class="primary-btn" onclick="changePhoto('studio')">Studio View</button>
                 </div>
             </div>
-
             <div class="card">
                 <h2 id="intel-title">Product</h2>
                 <h4 style="color: #666; font-size: 11px; text-transform: uppercase;">12-Month Regret Heatmap</h4>
-                <div style="display: flex; gap: 5px; margin-bottom: 2px;">
-                    <div style="flex: 1; text-align: center; font-size: 10px; color: #666;">1</div><div style="flex: 1; text-align: center; font-size: 10px; color: #666;">2</div><div style="flex: 1; text-align: center; font-size: 10px; color: #666;">3</div><div style="flex: 1; text-align: center; font-size: 10px; color: #666;">4</div><div style="flex: 1; text-align: center; font-size: 10px; color: #666;">5</div><div style="flex: 1; text-align: center; font-size: 10px; color: #666;">6</div><div style="flex: 1; text-align: center; font-size: 10px; color: #666;">7</div><div style="flex: 1; text-align: center; font-size: 10px; color: #666;">8</div><div style="flex: 1; text-align: center; font-size: 10px; color: #666;">9</div><div style="flex: 1; text-align: center; font-size: 10px; color: #666;">10</div><div style="flex: 1; text-align: center; font-size: 10px; color: #666;">11</div><div style="flex: 1; text-align: center; font-size: 10px; color: #666;">12</div>
-                </div>
                 <div class="heatmap-container">
                     <div class="month-box"></div><div class="month-box"></div><div class="month-box"></div><div class="month-box"></div><div class="month-box"></div><div class="month-box"></div><div class="month-box"></div><div class="month-box"></div><div class="month-box"></div><div class="month-box"></div><div class="month-box"></div><div class="month-box"></div>
                 </div>
                 <button class="primary-btn" style="width: 100%; margin-top: 15px;" onclick="add()">ADD TO CART</button>
-                <button class="buy-now-btn" onclick="buy()">BUY NOW</button>
             </div>
         </div>
-
         <div class="container" style="margin-top: 40px; flex-direction: column;">
             <h3>Product Feedback</h3>
             <div id="comment-list"><p style="color: #444;">No insights yet.</p></div>
             <div class="card" style="margin-top: 20px;">
-                <textarea id="comment-input" placeholder="Your experience..."></textarea>
-                <button class="primary-btn" onclick="postFeedback()">Post Insight</button>
+                <textarea id="comment-input" style="width: 98%; height: 80px; background: var(--bg); color: var(--text); border: 1px solid var(--border);" placeholder="Your experience..."></textarea>
+                <button class="primary-btn" style="margin-top: 10px;" onclick="postFeedback()">Post Insight</button>
             </div>
         </div>
     </div>
@@ -156,19 +268,29 @@
         <center><h2>Your Cart</h2><p id="cart-msg">Your Cart is empty.</p></center>
     </div>
 
+    <footer id="footer">
+        &copy; 2026 VALISTA Intelligence Systems. All Rights Reserved. 
+        <br>Contact: <a href="mailto:lakshitahuja01@gmail.com">lakshitahuja01@gmail.com</a>
+    </footer>
+
     <script>
         var user = "";
         var cartCount = 0;
         var activeItem = "";
 
+        function toggleMode() {
+            document.body.classList.toggle('light-mode');
+        }
+
         function doLogin() {
             var val = document.getElementById('user-input').value;
             if(val == "") { alert("Enter Name"); return; }
             user = val;
-            document.getElementById('nav-user-name').innerHTML = "User: " + user;
+            document.getElementById('nav-user-name').innerHTML = user;
             document.getElementById('display-name').innerHTML = user;
             document.getElementById('login-screen').style.display = 'none';
             document.getElementById('main-nav').style.display = 'flex';
+            document.getElementById('footer').style.display = 'block';
             navigateTo('home');
         }
 
@@ -176,9 +298,6 @@
             var pages = document.getElementsByClassName('page');
             for (var i = 0; i < pages.length; i++) { pages[i].style.display = "none"; }
             document.getElementById(id).style.display = "block";
-            if (id == 'cart') {
-                if (cartCount > 0) { document.getElementById('cart-msg').innerHTML = "Cart Items: " + cartCount; }
-            }
             window.scrollTo(0,0);
         }
 
@@ -194,13 +313,8 @@
 
         function openIntel(item) {
             activeItem = item;
-            var t = document.getElementById('intel-title');
-            var img = document.getElementById('prod-img');
-            if(item == 'headset') {
-                t.innerHTML = "HP 500 Headset"; img.src = "D:\\project\\Gemini_Generated_Image_r10txor10txor10t.png";
-            } else {
-                t.innerHTML = "Asus TUF Gaming F15"; img.src = "D:\\project\\unnamed (1).png";
-            }
+            document.getElementById('intel-title').innerHTML = item == 'headset' ? "HP 500 Headset" : "Asus TUF Gaming F15";
+            document.getElementById('prod-img').src = item == 'headset' ? "D:\\project\\Gemini_Generated_Image_r10txor10txor10t.png" : "D:\\project\\unnamed (1).png";
             updateHeatmap(item);
             navigateTo('product');
         }
@@ -214,10 +328,10 @@
             }
         }
 
-        function add() { cartCount++; 
+        function add() { 
+            cartCount++; 
             document.getElementById('cart-count').innerHTML = cartCount; 
-            alert("Added to Cart!"); }
-        function buy() { alert("Checkout for " + user); }
+            alert("Added!"); }
 
         function postFeedback() {
             var text = document.getElementById('comment-input').value;
