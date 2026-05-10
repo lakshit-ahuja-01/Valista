@@ -1,0 +1,171 @@
+<!-- <!DOCTYPE html> 
+<html> 
+<head> 
+<title>Array Length Example</title> 
+</head> 
+<body> 
+<script> 
+// Create an array 
+let arr = [1, 2, 3, 4]; 
+// Display the length in console 
+console.log("Array:", arr); 
+console.log("Length of array:", arr.length); 
+// Display the length on webpage 
+document.write("Array: " + arr + "<br>"); 
+document.write("Length of array: " + arr.length); 
+</script> 
+</body> 
+</html>  -->
+<!-- 
+<!DOCTYPE html> 
+<html> 
+<head> 
+<title>Array join() Example</title> 
+</head> 
+<body> 
+<script> 
+// Create an array 
+let arr = ["A", "B", "C"]; 
+// Join array elements with "-" 
+let result = arr.join("-"); 
+// Display in console 
+console.log("Array:", arr); 
+console.log("Joined string:", result); 
+// Display on webpage 
+document.write("Array: " + arr + "<br>"); 
+document.write("After join(): " + result); 
+</script> 
+</body> 
+</html>  -->
+
+<!-- <!DOCTYPE html> 
+<html> 
+<head> 
+<title>Array.isArray() Example</title> 
+</head> 
+<body> 
+<script> 
+// Create an array 
+let arr = [1, 2]; 
+// Check if it is an array 
+let result = Array.isArray(arr); 
+// Display in console 
+console.log("Value:", arr); 
+console.log("Is Array:", result); 
+// Display on webpage 
+document.write("Value: " + arr + "<br>"); 
+document.write("Is Array: " + result); 
+</script> 
+</body> 
+</html> -->
+
+<!-- <!DOCTYPE html> 
+<html> 
+<head> 
+<title>Array delete Example</title> 
+</head> 
+<body> 
+<script> 
+// Create an array 
+let arr = [1, 2, 3]; 
+// Delete element at index 1 
+delete arr[1]; 
+// Display in console 
+console.log("Array after delete:", arr); 
+console.log("Length:", arr.length); 
+// Display on webpage 
+document.write("Array after delete: " + arr + "<br>"); 
+document.write("Length: " + arr.length); 
+</script> 
+</body> 
+</html>  -->
+
+<!-- <!DOCTYPE html> 
+<html> 
+<head> 
+<title>Array copyWithin() Example</title> 
+</head> 
+<body> 
+<script> 
+// Create an array 
+let arr = [1, 2, 3, 4]; 
+// Copy elements within the array 
+arr.copyWithin(0, 2); 
+// Display in console 
+console.log("Modified Array:", arr); 
+// Display on webpage 
+document.write("Modified Array: " + arr); 
+</script> 
+</body> 
+</html>  -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Event Bubbling Example</title>
+    <style>
+        #parent {
+            width: 300px;
+            height: 200px;
+            background-color: lightblue;
+            padding: 20px;
+        }
+        #child {
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+<h2>Event Bubbling Demo</h2>
+<div id="parent">
+    Parent Div
+    <br><br>
+    <button id="child">Click Me</button>
+</div>
+<script>
+    let parent = document.getElementById("parent");
+    let child = document.getElementById("child");
+    parent.addEventListener("click", function() {
+        console.log("Parent clicked");
+    });
+    child.addEventListener("click", function() {
+        console.log("Button clicked");
+    });
+</script>
+</body>
+
+ -->
+
+ <!-- <!DOCTYPE html> 
+<html> 
+<body> 
+<script> 
+let arr = [10,20,30,40]; 
+let result = arr.slice(1,3); 
+document.write(result); 
+</script> 
+</body> 
+</html>  -->
+
+<!-- 
+<!DOCTYPE html> 
+<html> 
+<body> 
+<script> 
+let arr = [1,[2,3],[4,[5]]]; 
+let result = arr.flat(1); 
+window.alert(result); 
+</script> 
+</body> 
+</html>  -->
+
+<!DOCTYPE html> 
+<html> 
+<body> 
+<script> 
+let arr = [1,2,3,4]; 
+arr.copyWithin(1,2); 
+document.write(arr); 
+</script> 
+</body> 
+</html> 

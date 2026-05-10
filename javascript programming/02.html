@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arrow Function and Lexical This</title>
+</head>
+<body>
+
+<h2>Arrow Function and Lexical this</h2>
+
+<script>
+
+// Regular function example
+let person1 = {
+    name: "Lakshit",
+    greet: function() {
+        console.log("Regular Function:", this.name);
+    }
+};
+
+person1.greet();
+
+// Arrow function example inside object
+let person2 = {
+    name: "Lakshit",
+    greet: () => {
+        console.log("Arrow Function:", this.name);
+    }
+};
+
+person2.greet();
+
+</script>
+
+</body>
+</html>

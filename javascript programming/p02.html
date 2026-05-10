@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Default and Rest Parameters</title>
+</head>
+<body>
+<h2>JavaScript Function Parameters</h2>
+<script>
+
+// Default Parameter Example
+function calculateBill(item, price = 50) {
+    console.log("Item: " + item);
+    console.log("Price: ₹" + price);
+}
+calculateBill("Burger");
+calculateBill("Pizza", 120);
+
+// Rest Parameter Example
+function shoppingCart(...items) {
+    console.log("Items in Cart:");
+    for(let item of items) {
+        console.log(item);
+    }
+    console.log("Total Items: " + items.length);
+}
+shoppingCart("Shoes", "Watch", "Bag", "T-shirt");
+</script>
+</body>
+</html>

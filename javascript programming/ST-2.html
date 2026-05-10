@@ -1,0 +1,701 @@
+<!-- <!DOCTYPE html> 
+<html> 
+<head> 
+<title>Array flat() Example</title> 
+</head> 
+<body> 
+<script> 
+// Create a nested array 
+let arr = [1, [2, [3]]]; 
+// Flatten the array up to depth 2 
+let result = arr.flat(2); 
+// Display in console 
+console.log("Original Array:", arr); 
+console.log("Flattened Array:", result); 
+// Display on webpage 
+document.write("Original Array: " + JSON.stringify(arr) + "<br>"); 
+document.write("Flattened Array: " + result); 
+</script> 
+</body> 
+</html>  -->
+<!-- 
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>Array copyWithin() Example</title> 
+</head> 
+<body> 
+<script> 
+    // Create an array 
+    let arr = [1, 2, 3, 4]; 
+    // Copy elements within the array 
+    arr.copyWithin(0, 2); 
+    // Display in console 
+    console.log("Modified Array:", arr); 
+    // Display on webpage 
+    document.write("Modified Array: " + arr); 
+</script> 
+</body> 
+</html> -->
+
+<!-- <!DOCTYPE html> 
+<html> 
+<head> 
+<title>Array concat() Example</title> 
+</head> 
+<body> <script> 
+// Create two arrays 
+let a = [1, 2]; 
+let b = [3, 4]; 
+// Concatenate arrays 
+let result = a.concat(b); 
+// Display in console 
+console.log("Array A:", a); 
+console.log("Array B:", b); 
+console.log("After concat:", result); 
+// Display on webpage 
+document.write("Array A: " + a + "<br>"); 
+document.write("Array B: " + b + "<br>"); 
+document.write("After concat(): " + result); 
+</script> 
+</body> 
+</html> -->
+
+<!-- <!DOCTYPE html> 
+<html> 
+<head> 
+    <title>Array.isArray() Example</title> 
+</head> 
+<body> 
+<script> 
+    // Create an array 
+    let arr = [1, 2]; 
+    // Check if it is an array 
+    let result = Array.isArray(arr); 
+    // Display in console 
+    console.log("Value:", arr); 
+    console.log("Is Array:", result); 
+    // Display on webpage 
+    document.write("Value: " + arr + "<br>"); 
+    document.write("Is Array: " + result); 
+</script> 
+</body> 
+</html>  -->
+
+<!-- <!DOCTYPE html> 
+<html> 
+<head> 
+<title>Array slice() Example</title> 
+</head> 
+<body> 
+<script> 
+// Create an array 
+let arr = [1, 2, 3, 4]; 
+// Extract a portion of the array 
+let result = arr.slice(1, 3); 
+// Display in console 
+console.log("Original Array:", arr); 
+console.log("Sliced Array:", result); 
+// Display on webpage 
+document.write("Original Array: " + arr + "<br>"); 
+document.write("Sliced Array: " + result); 
+</script> 
+</body> 
+</html>  -->
+
+<!-- <!DOCTYPE html> 
+<html> 
+<head> 
+<title>Array splice() Example</title> 
+</head> 
+<body> 
+<script> 
+// Create an array 
+let arr = [1, 2, 3]; 
+// Modify array using splice() 
+arr.splice(1, 1, 99); 
+// Display in console 
+console.log("Modified Array:", arr); 
+// Display on webpage 
+document.write("Modified Array: " + arr); 
+</script> 
+</body> 
+</html>  -->
+
+<!-- <!DOCTYPE html> 
+<html> 
+<head> 
+    <title>indexOf Example</title> 
+</head> 
+<body> 
+<script> 
+    let fruits = ["apple", "banana", "mango", "banana"]; 
+    // Find index of "banana" 
+    let index1 = fruits.indexOf("banana"); 
+    document.write("First banana index: " + index1 + "<br>"); 
+    // Start searching from index 2 
+    let index2 = fruits.indexOf("banana", 2); 
+    document.write("Banana index from position 2: " + index2 + "<br>"); 
+    // Value not present 
+    let index3 = fruits.indexOf("grapes"); 
+    document.write("Grapes index: " + index3); 
+</script> 
+</body> 
+</html>  -->
+
+<!-- <!DOCTYPE html> 
+<html> 
+<body> 
+ 
+<h2>findIndex Example</h2> 
+ 
+<p id="demo"></p> 
+ 
+<script> 
+let numbers = [10, 20, 30, 40]; 
+ 
+let result = numbers.findIndex(function(num) { 
+    return num > 25; 
+}); 
+ 
+document.getElementById("demo").innerHTML = result; 
+</script> 
+ 
+</body> 
+</html>  -->
+<!-- 
+<!DOCTYPE html> 
+<html> 
+<body> 
+ 
+<h2>findLast Example</h2> 
+ 
+<p id="demo"></p> 
+ 
+<script> 
+let numbers = [10, 20, 30, 40]; 
+ 
+let result = numbers.findLast(function(num) { 
+    return num > 15; 
+}); 
+ 
+document.getElementById("demo").innerHTML = result; 
+</script> 
+ 
+</body> 
+</html>  -->
+
+<!-- <!DOCTYPE html> 
+<html> 
+<body> 
+<h2>sort() Example - Strings</h2> 
+<p id="demo"></p> 
+<script> 
+let fruits = ["Banana", "Apple", "Mango", "Orange"]; 
+fruits.sort(); 
+document.getElementById("demo").innerHTML = fruits; 
+</script> 
+</body>  -->
+
+<!-- <!DOCTYPE html> 
+<html> 
+<body> 
+<h2>reverse() Example</h2> 
+<p id="demo"></p> 
+<script> 
+let fruits = ["Apple", "Banana", "Mango"]; 
+fruits.reverse(); 
+document.getElementById("demo").innerHTML = fruits; 
+</script> 
+</body> 
+</html>  -->
+
+<!-- <!DOCTYPE html> 
+<html> 
+<head> 
+    <title>Sort Students by Marks</title> 
+</head> 
+<body> 
+ 
+<h2>Students Sorted by Marks (Ascending)</h2> 
+<p id="output"></p> 
+ 
+<script> 
+    let students = [ 
+        { name: "Aman", marks: 85 }, 
+        { name: "Riya", marks: 92 }, 
+        { name: "Karan", marks: 78 } 
+    ]; 
+ 
+    // Ascending order 
+    students.sort((a, b) => a.marks - b.marks); 
+ 
+    console.log(students); 
+ 
+    // Display result on webpage 
+    let result = students.map(s => s.name + " - " + s.marks).join("<br>"); 
+    document.getElementById("output").innerHTML = result; 
+</script> 
+ 
+</body> 
+</html>  -->
+
+ <!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Destructuring Example</title>
+</head>
+<body>
+
+<h2>Destructuring in JavaScript</h2>
+
+<script>
+     
+    let arr = [1, 2];
+    let [a, b] = arr;
+    let obj = { name: "Abhishek" };
+    let { name } = obj;
+
+    console.log("Array Values:", a, b);
+    console.log("Object Value:", name);
+
+   
+    document.write("Array Values: " + a + ", " + b + "<br>");
+    document.write("Object Value: " + name);
+</script>
+</body>
+</html> -->
+<!-- 
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+    function greet(name = "Guest") {
+        console.log("Hello " + name);
+        document.write("Hello " + name);
+    }
+
+    greet("Abhishek");  
+    greet();            
+</script>
+
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>getElementsByTagName Demo</title>
+</head>
+<body>
+    <h2>JavaScript DOM Example</h2>
+    <p>First Paragraph</p>
+    <p>Second Paragraph</p>
+    <p>Third Paragraph</p>
+<u> adklfjaldksjfladsk</u>
+    <script>
+        // Get all <p> elements
+        let elements = document.getElementsByTagName("p");
+      </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>querySelectorAll Example</title>
+</head>
+<body>
+
+    <h2>JavaScript DOM Example</h2>
+
+    <p>First Paragraph</p>
+    <p>Second Paragraph</p>
+    <p>Third Paragraph</p>
+
+    <script>
+        // Select all <p> elements
+        let elements = document.querySelectorAll("p");
+
+        // Loop through each element and print it
+        elements.forEach(el => console.log(el));
+    </script>
+
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Read Style Property</title>
+</head>
+<body>
+    <h2>JavaScript DOM - Read CSS Style</h2>
+    <p id="demo" style="color: blue;">Hello Abhishek!</p>
+    <button onclick="getColor()">Get Color</button>
+    <script>
+        function getColor() {
+            // Read color style
+            let color = document.getElementById("demo").style.color;
+          
+            // Print in console
+            console.log(color);
+            // Show on screen
+            alert("Color is: " + color);
+        }
+    </script>
+</body>
+</html> -->
+
+   <!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>classList.add() Example</title>
+    <style>
+        .myClass {
+            color: blue;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>JavaScript classList.add() Demo</h2>
+    <p id="demo">Hello</p>
+    <button onclick="addClass()">Add Style</button>
+    <script>
+        function addClass() {
+            document.getElementById("demo").classList.add("myClass");
+        }
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>classList.remove() Example</title>
+    <style>
+        .myClass {
+            color: red;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>JavaScript classList.remove() Demo</h2>
+    <p id="demo" class="myClass">Hello</p>
+    <button onclick="removeClass()">Remove Style</button>
+    <script>
+        function removeClass() {
+            document.getElementById("demo").classList.remove("myClass");
+        }
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>classList.toggle() Example</title>
+
+    <style>
+        .myClass {
+            color: green;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>JavaScript classList.toggle() Demo</h2>
+    <p id="demo">Hello</p>
+    <button onclick="toggleClass()">Toggle Style</button>
+    <script>
+        function toggleClass() {
+            document.getElementById("demo").classList.toggle("myClass");
+        }
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>classList.contains() Example</title>
+    <style>
+        .myClass {
+            color: purple;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>JavaScript classList.contains() Demo</h2>
+    <p id="demo" class="myClass">Hello</p>
+    <button onclick="checkClass()">Check Class</button>
+    <script>
+        function checkClass() {
+            let hasClass = document.getElementById("demo").classList.contains("myClass");
+            console.log(hasClass);
+            if (hasClass) {
+                alert("Class मौजूद है (Class exists)");
+            } else {
+                alert("Class मौजूद नहीं है (Class does not exist)");
+            }
+        }
+    </script>
+</body>
+</html> -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Delete Operator Example</title>
+</head>
+<body>
+
+    <h1>Check the Console</h1>
+    <p>Open your browser's Developer Tools (F12 or Right-click > Inspect) to see the output.</p>
+
+    <script>
+        // The original array
+        let arr = [10, 20, 30];
+
+        // Using delete removes the value but leaves an 'empty slot'
+        delete arr[1];
+
+        // Logging the results
+        console.log("Array after delete:", arr);
+        console.log("Array length:", arr.length);
+        console.log("Value at index 1:", arr[1]);
+    </script>
+
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Effect Example</title>
+    <style>
+        #text {
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s; /* Makes the color change smooth */
+        }
+    </style>
+</head>
+<body>
+
+    <p id="text">Hover over me to change my color!</p>
+
+    <script>
+        // Select the element by its ID
+        let text = document.getElementById("text");
+
+        // Change color to red when mouse enters
+        text.addEventListener("mouseover", function() {
+           text.style.color = "red";
+        });
+
+        // Change color back to black when mouse leaves
+        text.addEventListener("mouseout", function() {
+           text.style.color = "black";
+        });
+    </script>
+
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Target Example</title>
+</head>
+<body>
+
+    <button id="btn">Click Me!</button>
+
+    <script>
+        document.getElementById("btn").addEventListener("click", function(event) {
+            // 'event' is the object containing data about the click
+            // 'event.target' refers specifically to the button itself
+            console.log("You clicked this element:", event.target);
+            
+            // Example: You can access properties of the target
+            console.log("The button text is:", event.target.innerText);
+        });
+    </script>
+
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Submit Event Example</title>
+</head>
+<body>
+
+<form id="myForm">
+    Name: <input type="text" id="name"><br><br>
+    <input type="submit" value="Submit">
+</form>
+
+<script>
+    let form = document.getElementById("myForm");
+
+    form.addEventListener("submit", function(event) {
+        event.preventDefault(); // रोकता है form reload
+
+        let name = document.getElementById("name").value;
+        alert("Form submitted! Name: " + name);
+    });
+</script>
+
+</body>
+</html> -->
+<!-- 
+<!DOCTYPE html>
+<html>
+<body>
+
+Enter Name: <input type="text" id="name">
+
+<script>
+let input = document.getElementById("name");
+
+input.addEventListener("change", function() {
+    alert("Value changed to: " + input.value);
+});
+</script>
+
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Mouse Events Example</title>
+</head>
+<body>
+
+    <h2>Mouseover and Mouseout Event Demo</h2>
+
+    <button id="btn">Hover over me</button>
+
+    <script>
+        let btn = document.getElementById("btn");
+
+        btn.addEventListener("mouseover", function() {
+            console.log("Mouse over");
+        });
+
+        btn.addEventListener("mouseout", function() {
+            console.log("Mouse out");
+        });
+    </script>
+
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+    <style>
+        body {
+            font-family: Arial;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+        input {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+<h2>Form Validation Example</h2>
+<form id="myForm">
+    Name: <input type="text" id="name">
+    <div id="nameError" class="error"></div><br>
+    Email: <input type="email" id="email">
+    <div id="emailError" class="error"></div><br>
+    <input type="submit" value="Submit">
+</form>
+<script>
+let form = document.getElementById("myForm");
+form.addEventListener("submit", function(event) {
+    event.preventDefault(); // stop submission initially
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let nameError = document.getElementById("nameError");
+    let emailError = document.getElementById("emailError");
+    // Clear previous errors
+    nameError.innerHTML = "";
+    emailError.innerHTML = "";
+    let isValid = true;
+    // Name validation
+    if (name === "") {
+        nameError.innerHTML = "Name is required";
+        isValid = false;
+    } else if (name.length < 3) {
+        nameError.innerHTML = "Name must be at least 3 characters";
+        isValid = false;
+    }
+    // Email validation
+    let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (email === "") {
+        emailError.innerHTML = "Email is required";
+        isValid = false;
+    } else if (!emailPattern.test(email)) {
+        emailError.innerHTML = "Enter a valid email";
+        isValid = false;
+    }
+    // Submit form if valid
+    if (isValid) {
+        alert("Form submitted successfully!");
+        form.submit();
+    }
+});
+</script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<body>
+
+<h2>Navigator Example</h2>
+
+<script>
+document.write("Browser Name: " + navigator.appName + "<br>");
+document.write("Platform: " + navigator.platform + "<br>");
+document.write("Language: " + navigator.language);
+</script>
+
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<body>
+<button onclick="goBack()">Go Back</button>
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+</body>
+</html> -->
+
